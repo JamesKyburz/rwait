@@ -1,5 +1,7 @@
 # rwait
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/JamesKyburz/rwait.svg)](https://greenkeeper.io/)
+
 [![js-standard-style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/feross/standard)
 [![npm](https://img.shields.io/npm/v/rwait.svg)](https://npmjs.org/package/rwait)
 [![downloads](https://img.shields.io/npm/dm/rwait.svg)](https://npmjs.org/package/rwait)
