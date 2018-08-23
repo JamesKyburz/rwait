@@ -1,7 +1,12 @@
 module.exports = Rwait
 
 function Rwait (r) {
-  return function rwait (options, cb) {
+  return function rwait (connection, options, cb) {
+    if (typeof options === 'function') {
+      cb = options
+      options = connection
+      connection = undefined
+    }
     const { db, table, timeout, filter } = options
     return new Promise((resolve, reject) => {
       r
@@ -9,7 +14,7 @@ function Rwait (r) {
         .table(table)
         .changes()
         .filter(filter)
-        .run((err, cursor) => {
+        .run(connection, (err, cursor) => {
           if (err) return reject(err)
           resolve({
             value: new Promise((resolve, reject) => {
