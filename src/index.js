@@ -25,7 +25,7 @@ function Rwait (r) {
               cursor.each((err, res) => {
                 if (err) return reject(err)
                 if (timer) clearTimeout(timer)
-                cursor.close()
+                cursor.close().catch({})
                 resolve(res.new_val)
               })
             })
