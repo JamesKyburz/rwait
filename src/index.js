@@ -1,9 +1,8 @@
 module.exports = Rwait
 
 function Rwait (r) {
-  return function rwait (connection, options, cb) {
-    if (typeof options === 'function') {
-      cb = options
+  return function rwait (connection, options) {
+    if (!options) {
       options = connection
       connection = undefined
     }
